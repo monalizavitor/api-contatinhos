@@ -1,2 +1,2 @@
-# api-contatinhos
-API para gerenciar os contatinhos
+# api-contatos
+API para gerenciar contatos
