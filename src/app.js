@@ -1,15 +1,17 @@
 const index = require('./routes/index')
-// const contatinhos = require('./routes/contatinhosRoutes')
-const cors = require('cors')
+const contatos = require('./routes/contatosRoutes')
+const db = require('./models/contatosRepository')
 
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
+db.connect()
 app.use(cors())
 app.use(express.json())
 
 app.use('/', index)
-// app.use('/contatinho', contatinhos)
+app.use('/contatos', contatos)
 
 
 module.exports = app
