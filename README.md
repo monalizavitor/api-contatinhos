@@ -1,9 +1,9 @@
-# API Contatos
-API feita como desafio da semana 14 da [{reprograma}](https://github.com/reprograma) para gerenciar contatos
+# Gerenciador de Contatos
+API feita como desafio da semana 14 da [{reprograma}](https://github.com/reprograma)
 
 ## Contrato da API
 
-Endpoints|descrição|
+Endpoints|Descrição|
 ---|----|
 "/"| Retorna index com apresentação { mensagem: bem vinda a lista de contatos }|---
  "/contatos/"| Retorna todos os dados do banco de dados|
@@ -17,7 +17,7 @@ Endpoints|descrição|
 
 ### Arquitetura MVC
 
-![image info](./api-contatos\img\CRUD.png)
+![MVC](./api-contatos\img\CRUD.png)
 
 
 
