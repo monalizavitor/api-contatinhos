@@ -2,6 +2,7 @@ const contatosCollection = require('../models/contatosSchema')
 
 const getAll = (req, res) => {
 
+    console.log(req.url)
     contatosCollection.find((error, contacts) => {
         if (error) {
             return res.status(500).json(error)
@@ -14,6 +15,7 @@ const getAll = (req, res) => {
 
 const addContact = (req, res) => {
 
+    console.log(req.url)
     const contactBody = req.body
     const contact = new contatosCollection(contactBody)
 
@@ -31,6 +33,7 @@ const addContact = (req, res) => {
 
 const getById = (req, res) => {
 
+    console.log(req.url)
     const id = req.params.id
 
     contatosCollection.findById(id, (error, contact) => {
@@ -46,6 +49,7 @@ const getById = (req, res) => {
 
 const getByName = (req, res) => {
 
+    console.log(req.url)
     const { name } = req.params
 
     contatosCollection.find(name, (error, contact) => {
@@ -53,9 +57,9 @@ const getByName = (req, res) => {
             return res.status(500).send(error)
         } else {
             if (contact == "") {
-                return res.status(404).send({ message: 'Contato não encontrado!' })
+                return res.status(404).send({ message: 'Contato não encontrado! ' + contact })
             } else {
-                return res.status(200).send({ message: 'Get por nome realizado com sucesso!' + contact })
+                return res.status(200).send({ message: 'Get por nome realizado com sucesso! ' + contact })
             }
         }
     })
@@ -70,7 +74,7 @@ const deleteContact = (req, res) => {
             return res.status(500).send(error)
         } else {
             if (contact) {
-                return res.status(200).send({ message: contact + 'Contato deletado com sucesso!' })
+                return res.status(200).send({ message: 'Contato deletado com sucesso! ' + contact })
             } else {
                 return res.status(404).send({ message: 'Esse contato não foi encontrado' })
             }
@@ -81,8 +85,9 @@ const deleteContact = (req, res) => {
 
 const updateNumberContact = (req, res) => {
 
-    const { id } = id.params
-    const { body } = req.body
+    console.log(req.url)
+    const { id } = req.params
+    const body = req.body
     const update = { new: true }
 
     if (body.nome != null || body.dataNascimento != null) {
@@ -102,6 +107,7 @@ const updateNumberContact = (req, res) => {
 
 const updateContact = (req, res) => {
 
+    console.log(req.url)
     const { id } = req.params
     const body = req.body
     const update = { new: true }

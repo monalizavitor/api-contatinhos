@@ -20,10 +20,10 @@ router.get('/id/:id', controller.getById)
 router.delete('/deletar/:id', controller.deleteContact)
 
 //altera o campo 'celular' do cadastro
-router.patch('/atualizar/telefone/:id', controller.updateNumberContact)
+router.put('/atualizar/telefone/:id', controller.updateNumberContact)
 
 //altera todo o cadastro
-router.put('/atulizar/:id', controller.updateContact)
+router.put('/atualizar/:id', controller.updateContact)
 
 
 
