@@ -17,7 +17,7 @@ Endpoints|Descrição|
 
 ### Arquitetura MVC
 
-![MVC](/api-contatos\img\CRUD.png)
+![MVC](api-contatos\img\CRUD.png)
 
 
 
